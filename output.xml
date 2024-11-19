@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.9.6 on darwin)" generated="2024-11-19T14:53:50.111442" rpa="false" schemaversion="5">
+<suite id="s1" name="Ui Test Suite" source="/Users/alifyusof/PycharmProjects/sauceDemo/tests/ui_test_suite.robot">
+<kw name="Open Browser to SauceDemo" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:50.216954" level="INFO">Opening browser 'chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-19T14:53:50.216832" elapsed="3.102307"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-11-19T14:53:53.319563" elapsed="0.338468"/>
+</kw>
+<doc>Open the browser and navigate to the application</doc>
+<status status="PASS" start="2024-11-19T14:53:50.216428" elapsed="3.441730"/>
+</kw>
+<test id="s1-t1" name="Test User Can Complete Purchase" line="77">
+<kw name="Maximize Browser Window" owner="SeleniumLibrary" type="SETUP">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-11-19T14:53:53.658733" elapsed="0.003387"/>
+</kw>
+<kw name="Login To Application">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:53.662876" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<arg>id=user-name</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:53:53.662509" elapsed="0.125078"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:53.787925" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:53:53.787747" elapsed="0.032111"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:53.820113" level="INFO">Clicking button 'id=login-button'.</msg>
+<arg>id=login-button</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:53:53.819990" elapsed="0.069116"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=inventory_container</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-19T14:53:53.889309" elapsed="0.011586"/>
+</kw>
+<doc>Successful Login to the Application</doc>
+<status status="PASS" start="2024-11-19T14:53:53.662307" elapsed="0.238687"/>
+</kw>
+<kw name="Add Products To Cart">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:53.901450" level="INFO">Clicking button 'xpath=//div/button[@id="add-to-cart-sauce-labs-backpack"]'.</msg>
+<arg>xpath=//div/button[${ADD_PRODUCT_1}]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:53:53.901305" elapsed="0.031170"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${REMOVE_PRODUCT_1}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-19T14:53:53.932602" elapsed="0.007668"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:53.940560" level="INFO">Clicking button 'xpath=//div/button[@id="add-to-cart-sauce-labs-bike-light"]'.</msg>
+<arg>xpath=//div/button[${ADD_PRODUCT_2}]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:53:53.940407" elapsed="0.028590"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${REMOVE_PRODUCT_2}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-19T14:53:53.969118" elapsed="0.006876"/>
+</kw>
+<doc>Add Products To Cart</doc>
+<status status="PASS" start="2024-11-19T14:53:53.901128" elapsed="0.074970"/>
+</kw>
+<kw name="Go To Cart And Validate">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:53.976506" level="INFO">Clicking element 'xpath=//div[@id="shopping_cart_container"]'.</msg>
+<arg>xpath=//div[@id="shopping_cart_container"]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:53:53.976410" elapsed="0.028986"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" owner="SeleniumLibrary">
+<arg>30s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.005534" elapsed="0.000578"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=checkout</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.006201" elapsed="0.007344"/>
+</kw>
+<kw name="Wait Until Element Contains" owner="SeleniumLibrary">
+<arg>id=checkout</arg>
+<arg>Checkout</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` contains ``text``.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.013642" elapsed="0.008455"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:54.030578" level="INFO">${cart_items} = 1
+Sauce Labs Backpack
+carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
+$29.99
+Remove</msg>
+<var>${cart_items}</var>
+<arg>xpath=//div[@class="cart_item"][1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.022205" elapsed="0.008397"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${cart_items}</arg>
+<arg>${PRODUCT_1}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.030706" elapsed="0.000153"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:54.038241" level="INFO">${cart_items} = 1
+Sauce Labs Bike Light
+A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.
+$9.99
+Remove</msg>
+<var>${cart_items}</var>
+<arg>xpath=//div[@class="cart_item"][2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.030922" elapsed="0.007341"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${cart_items}</arg>
+<arg>${PRODUCT_2}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.038344" elapsed="0.000111"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-19T14:53:54.038606" level="INFO">1
+Sauce Labs Bike Light
+A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.
+$9.99
+Remove</msg>
+<arg>${cart_items}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.038532" elapsed="0.000099"/>
+</kw>
+<doc>Go To Cart And Validate</doc>
+<status status="PASS" start="2024-11-19T14:53:53.976241" elapsed="0.062431"/>
+</kw>
+<kw name="Checkout And Validate">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:54.038982" level="INFO">Clicking button 'xpath=//button[@id="checkout"]'.</msg>
+<arg>xpath=//button[@id="checkout"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.038906" elapsed="0.032965"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id=checkout_info_container</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.072005" elapsed="0.007425"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:54.079693" level="INFO">Typing text 'TEST' into text field 'id=first-name'.</msg>
+<arg>id=first-name</arg>
+<arg>${FIRST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.079540" elapsed="0.035119"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:54.114970" level="INFO">Typing text 'SauceDemo' into text field 'id=last-name'.</msg>
+<arg>id=last-name</arg>
+<arg>${LAST_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.114798" elapsed="0.030038"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:54.145133" level="INFO">Typing text '12345' into text field 'id=postal-code'.</msg>
+<arg>id=postal-code</arg>
+<arg>${POSTAL_CODE}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.144972" elapsed="0.036221"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:54.181509" level="INFO">Clicking button 'id=continue'.</msg>
+<arg>id=continue</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.181364" elapsed="0.041667"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:54.230910" level="INFO">${cart_items} = 1
+Sauce Labs Backpack
+carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.
+$29.99</msg>
+<var>${cart_items}</var>
+<arg>xpath=//div[@class="cart_item"][1]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.223184" elapsed="0.007754"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${cart_items}</arg>
+<arg>${PRODUCT_1}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.231051" elapsed="0.000133"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:54.241933" level="INFO">${total_price} = $29.99</msg>
+<var>${total_price}</var>
+<arg>xpath=//div[@class="inventory_item_price"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.231254" elapsed="0.010703"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${total_price}</arg>
+<arg>${TOTAL_PRICE_PRODUCT_1}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.242050" elapsed="0.000120"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:54.248127" level="INFO">${cart_items_2} = 1
+Sauce Labs Bike Light
+A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.
+$9.99</msg>
+<var>${cart_items_2}</var>
+<arg>xpath=//div[@class="cart_item"][2]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.242234" elapsed="0.005913"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${cart_items_2}</arg>
+<arg>${PRODUCT_2}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.248221" elapsed="0.000102"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:53:54.254153" level="INFO">${total_price_2} = $29.99</msg>
+<var>${total_price_2}</var>
+<arg>xpath=//div[@class="inventory_item_price"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.248389" elapsed="0.005783"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${total_price_2}</arg>
+<arg>${TOTAL_PRICE_PRODUCT_2}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.254243" elapsed="0.000109"/>
+</kw>
+<doc>Proceed to checkout</doc>
+<status status="PASS" start="2024-11-19T14:53:54.038785" elapsed="0.215613"/>
+</kw>
+<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.254504" elapsed="0.077645"/>
+</kw>
+<doc>This test case will open the browser, log in</doc>
+<tag>Checkout</tag>
+<tag>UI</tag>
+<status status="PASS" start="2024-11-19T14:53:53.658306" elapsed="0.673926"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-19T14:53:54.332599" elapsed="0.000102"/>
+</kw>
+<status status="PASS" start="2024-11-19T14:53:50.112802" elapsed="4.219925"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Checkout</stat>
+<stat pass="1" fail="0" skip="0">UI</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Ui Test Suite">Ui Test Suite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
